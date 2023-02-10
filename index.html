@@ -14,6 +14,14 @@
         <h1>しゃるるぼたん</h1>
 
         <script>
+            $(function () {
+                $.getJSON("buttons.json", function (data) {
+                    for (var i = 0; i < data.length; i++) {
+                        $(".buttons").append("<button class=\"audio-button\"><audio src=\"" + data[i].path + "\" data-name=\"" + data[i].name + "\"></audio></button>");
+                    }
+                });
+            });
+
             $(document).ready(function () {
                 var playing = false;
 
@@ -28,14 +36,6 @@
                     var $button = $(this);
                     var audio = $button.find("audio")[0];
                     audio.play();
-                });
-            });
-
-            $(function () {
-                $.getJSON("buttons.json", function (data) {
-                    for (var i = 0; i < data.length; i++) {
-                        $(".buttons").append("<button class=\"audio-button\"><audio src=\"" + data[i].path + "\" data-name=\"" + data[i].name + "\"></audio></button>");
-                    }
                 });
             });
         </script>
