@@ -17,7 +17,7 @@
     <script>
         $.getJSON("buttons.json", function (data) {
             for (var i = 0; i < data.length; i++) {
-                console.log($audio.data("name"));
+                console.log(data[i].path);
                 $(".buttons").append("<button class=\"audio-button\"><audio src=\"" + data[i].path + "\" data-name=\"" + data[i].name + "\"></audio></button>");
             }
         });
