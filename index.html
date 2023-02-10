@@ -23,7 +23,7 @@
                     var $button = $(this);
                     var $audio = $button.find("audio");
 
-                    $($("<span>").text($audio.data("name"))).insertBefore($audio);
+                    $($("<span>").text($audio.attr("src"))).insertBefore($audio);
                 });
 
                 $(".audio-button").click(function () {
