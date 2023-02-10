@@ -23,7 +23,7 @@
                     var $button = $(this);
                     var $audio = $button.find("audio");
 
-                    $($("<span>").text($audio.attr("name"))).insertBefore($audio);
+                    $($("<span>").text($audio.data("name"))).insertBefore($audio);
                 });
 
                 $(".audio-button").click(function () {
@@ -44,7 +44,7 @@
             $(function () {
                 $.getJSON("buttons.json", function (data) {
                     for (var i = 0; i < data.length; i++) {
-                        $(".buttons").append("<button class=\"fa audio-button\"><audio src=\"" + data[i].path + "\" name=\"" + data[i].name + "\"></audio></button>");
+                        $(".buttons").append("<button class=\"fa audio-button\"><audio src=\"" + data[i].path + "\" data-name=\"" + data[i].name + "\"></audio></button>");
                     }
                 });
             });
