@@ -17,14 +17,14 @@
             $(document).ready(function () {
                 var playing = false;
 
-                $("div.buttons audio-button").each(function () {
+                $("div.buttons .audio-button").each(function () {
                     var $button = $(this);
                     var $audio = $button.find("audio");
 
                     $($("<span>").text($audio.data("name"))).insertBefore($audio);
                 });
 
-                $("div.buttons audio-button").click(function () {
+                $("div.buttons .audio-button").click(function () {
                     var $button = $(this);
                     var audio = $button.find("audio")[0];
                     audio.play();
