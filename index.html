@@ -13,13 +13,13 @@
         <h1>しゃるるぼたん</h1>
 
         <script>
-            function audio() {
+            function play() {
                 document.getElementById('btn_audio').currentTime = 0;
                 document.getElementById('btn_audio').play();
             }
         </script>
 
-        <div class="btn" onclick="audio()">てすとぼたん</div>
+        <div class="btn" onclick="play()">てすとぼたん</div>
 
         <audio id="btn_audio">
             <source src="sounds/test.mp3" type="audio/mp3">
