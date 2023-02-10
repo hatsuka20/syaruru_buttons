@@ -17,17 +17,14 @@
     <script>
         $.when($.getJSON("buttons.json", function (data) {
             for (var i = 0; i < data.length; i++) {
-                console.log(data[i].path);
                 $(".buttons").append("<button class=\"audio-button\"><audio src=\"" + data[i].path + "\" data-name=\"" + data[i].name + "\"></audio></button>");
             }
         })).done(function () {
             var playing = false;
-            console.log("here");
 
             $("div.buttons .audio-button").each(function () {
                 var $button = $(this);
                 var $audio = $button.find("audio");
-                console.log($audio.data("name"));
 
                 $($("<span>").text($audio.data("name"))).insertBefore($audio);
             });
@@ -36,7 +33,6 @@
                 var $button = $(this);
                 var audio = $button.find("audio")[0];
                 audio.play();
-                console.log("click");
             });
         });
     </script>
