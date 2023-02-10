@@ -13,16 +13,16 @@
     <main>
         <h1>しゃるるぼたん</h1>
 
+        <div class="buttons"></div>
+
         <script>
-            $(function () {
-                $.getJSON("buttons.json", function (data) {
-                    for (var i = 0; i < data.length; i++) {
-                        $(".buttons").append("<button class=\"audio-button\"><audio src=\"" + data[i].path + "\" data-name=\"" + data[i].name + "\"></audio></button>");
-                    }
-                });
+            $.getJSON("buttons.json", function (data) {
+                for (var i = 0; i < data.length; i++) {
+                    $(".buttons").append("<button class=\"audio-button\"><audio src=\"" + data[i].path + "\" data-name=\"" + data[i].name + "\"></audio></button>");
+                }
             });
 
-            $(document).ready(function () {
+            $(function () {
                 var playing = false;
 
                 $("div.buttons .audio-button").each(function () {
@@ -41,7 +41,6 @@
             });
         </script>
 
-        <div class="buttons"></div>
 
     </main>
 
