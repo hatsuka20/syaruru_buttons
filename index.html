@@ -16,30 +16,29 @@
         <div class="buttons"></div>
 
         <script>
-            $.when(
-                $.getJSON("buttons.json", function (data) {
-                    for (var i = 0; i < data.length; i++) {
-                        $(".buttons").append("<button class=\"audio-button\"><audio src=\"" + data[i].path + "\" data-name=\"" + data[i].name + "\"></audio></button>");
-                    }
-                })
-            ).done(
-                $(function () {
-                    var playing = false;
+            $.getJSON("buttons.json", function (data) {
+                for (var i = 0; i < data.length; i++) {
+                    $(".buttons").append("<button class=\"audio-button\"><audio src=\"" + data[i].path + "\" data-name=\"" + data[i].name + "\"></audio></button>");
+                }
+            });
 
-                    $("div.buttons .audio-button").each(function () {
-                        var $button = $(this);
-                        var $audio = $button.find("audio");
-                        console.log($audio.data("name"));
+            $(function () {
+                var playing = false;
 
-                        $($("<span>").text($audio.data("name"))).insertBefore($audio);
-                    });
+                $("div.buttons .audio-button").each(function () {
+                    var $button = $(this);
+                    var $audio = $button.find("audio");
+                    console.log($audio.data("name"));
 
-                    $("div.buttons .audio-button").click(function () {
-                        var $button = $(this);
-                        var audio = $button.find("audio")[0];
-                        audio.play();
-                    });
-                }));
+                    $($("<span>").text($audio.data("name"))).insertBefore($audio);
+                });
+
+                $("div.buttons .audio-button").click(function () {
+                    var $button = $(this);
+                    var audio = $button.find("audio")[0];
+                    audio.play();
+                });
+            });
         </script>
 
 
