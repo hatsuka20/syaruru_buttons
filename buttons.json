@@ -1,0 +1,14 @@
+[
+    {
+        "path": "sounds/test1.mp3",
+        "name": "てすとぼたん1"
+    },
+    {
+        "path": "sounds/test2.mp3",
+        "name": "てすとぼたん2"
+    },
+    {
+        "path": "sounds/test3.mp3",
+        "name": "てすとぼたん3"
+    }
+]

@@ -6,24 +6,25 @@
     <title>しゃるるぼたん</title>
     <link rel="shortcut icon" type="image/x-icon" href="favicon.ico">
     <link rel="stylesheet" href="button.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
 </head>
 
 <body>
     <main>
         <h1>しゃるるぼたん</h1>
 
+        <div class="buttons"></div>
+
         <script>
-            function play() {
-                document.getElementById('btn_audio').currentTime = 0;
-                document.getElementById('btn_audio').play();
-            }
+            $(function () {
+                $.getJSON("buttons.json", function (data) {
+                    for (var i = 0; i < data.length; i++) {
+                        $(".buttons").append("<div class='btn'>" + data[i].name + "</div>");
+                    }
+                });
+            });
         </script>
 
-        <div class="btn" onclick="play()">てすとぼたん</div>
-
-        <audio id="btn_audio">
-            <source src="sounds/test.mp3" type="audio/mp3">
-        </audio>
     </main>
 
 </body>
