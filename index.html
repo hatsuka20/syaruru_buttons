@@ -13,8 +13,6 @@
     <main>
         <h1>しゃるるぼたん</h1>
 
-        <div class="buttons"></div>
-
         <script>
             $(document).ready(function () {
                 var playing = false;
@@ -33,24 +31,16 @@
                 });
             });
 
-            // $(function () {
-            //     $.getJSON("buttons.json", function (data) {
-            //         for (var i = 0; i < data.length; i++) {
-            //             $(".buttons").append("<button class=\"fa audio-button\"><audio src=\"" + data[i].path + "\" data-name=\"" + data[i].name + "\"></audio></button>");
-            //         }
-            //     });
-            // });
+            $(function () {
+                $.getJSON("buttons.json", function (data) {
+                    for (var i = 0; i < data.length; i++) {
+                        $(".buttons").append("<button class=\"fa audio-button\"><audio src=\"" + data[i].path + "\" data-name=\"" + data[i].name + "\"></audio></button>");
+                    }
+                });
+            });
         </script>
 
-        <button class="audio-button">
-            <audio src="sounds/test1.mp3" data-name="ぼたん1"></audio>
-        </button>
-        <button class="audio-button">
-            <audio src="sounds/test2.mp3" data-name="ぼたん2"></audio>
-        </button>
-        <button class="audio-button">
-            <audio src="sounds/test3.mp3" data-name="ぼたん3"></audio>
-        </button>
+        <div class="buttons"></div>
 
     </main>
 
